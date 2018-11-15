@@ -22,7 +22,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         RecyclerView recyclerView = findViewById(R.id.Lista_tienda);
         List<Item> mlist =  new ArrayList<>();
-        mlist.add(new Item(R.drawable.game,R.drawable.clavero,"clavero","españa"));
+        //mlist.add(new Item(R.drawable.game,R.drawable.clavero,"clavero","españa"));
         Adapter adapter = new Adapter(this,mlist);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

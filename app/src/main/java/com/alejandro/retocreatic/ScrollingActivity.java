@@ -6,12 +6,18 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.GridView;
+
+import java.util.ArrayList;
 
 public class ScrollingActivity extends AppCompatActivity {
     private GridView gridView;
     private AdaptadorProductos adaptador;
     public static final String EXTRA_PARAM_ID = "com.herprogramacion.comidas20184K.extra.ID";
+    private Item itemdetallado;
+    ArrayList<Item> listaropa = new ArrayList<Item>();
+
 
 
 
@@ -22,10 +28,16 @@ public class ScrollingActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        itemdetallado = Item.getItem(getIntent().getIntExtra(EXTRA_PARAM_ID, 0));
+
+
+
+        listaropa = Lista_Tienda.mlist2;
 
         gridView = findViewById(R.id.lista_productos);
-        adaptador = new AdaptadorProductos(this);
+        adaptador = new AdaptadorProductos(this,listaropa);
         gridView.setAdapter(adaptador);
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

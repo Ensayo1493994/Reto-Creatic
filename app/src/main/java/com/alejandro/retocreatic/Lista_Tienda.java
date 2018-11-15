@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,12 @@ import java.util.List;
 
 public class Lista_Tienda extends Fragment {
     int a;
+    public static ArrayList<Item> mlist =  new ArrayList<>();
+    public static ArrayList<Item> mlist2 =  new ArrayList<>();
+    String nombre, direccion;
+    int imagen, marca;
+    public  static  ArrayList<Item> listaropatienda = new ArrayList<>();
+    public static  List<Item> lista;
 
 
     @Override
@@ -35,14 +42,14 @@ public class Lista_Tienda extends Fragment {
 
 
         RecyclerView recyclerView = vista.findViewById(R.id.Lista_tienda);
-        final List<Item> mlist =  new ArrayList<>();
-        mlist.add(new Item(R.drawable.game,R.drawable.clavero,"clavero","españa"));
-        mlist.add(new Item(R.drawable.game,R.drawable.byloko,"BY LOCO","Centro Comercial Campanario Local 130"));
-        mlist.add(new Item(R.drawable.game,R.drawable.koaj,"KOAJ","Calle 6ta No 7-42"));
-        mlist.add(new Item(R.drawable.game,R.drawable.quests,"QUESTS","Cra 9 24a-21, Popayán"));
-        mlist.add(new Item(R.drawable.game,R.drawable.mattelsa,"MATTELSA","Cra 7 # 3 – 22 C.C Plaza Colonial Local 101"));
-        mlist.add(new Item(R.drawable.game,R.drawable.ragged,"RAGGED","Cra 9 24 AN 21 - LOCAL 2-3"));
-        mlist.add(new Item(R.drawable.game,R.drawable.sudaca,"REPUBLICA SUDACA","Cra. 7 Nte. #7-34"));
+
+        //mlist.add(new Item(R.drawable.game,R.drawable.clavero,"clavero","españa"));
+        mlist.add(new Item(R.drawable.game,R.drawable.byloko,R.drawable.dre,"BY LOCO","Centro Comercial Campanario Local 130"));
+        mlist.add(new Item(R.drawable.game,R.drawable.koaj,R.drawable.koajl,"KOAJ","Calle 6ta No 7-42"));
+        mlist.add(new Item(R.drawable.game,R.drawable.quests,R.drawable.camisa,"QUESTS","Cra 9 24a-21, Popayán"));
+        mlist.add(new Item(R.drawable.game,R.drawable.mattelsa,R.drawable.cran,"MATTELSA","Cra 7 # 3 – 22 C.C Plaza Colonial Local 101"));
+        mlist.add(new Item(R.drawable.game,R.drawable.ragged,R.drawable.pantalonmujer,"RAGGED","Cra 9 24 AN 21 - LOCAL 2-3"));
+        mlist.add(new Item(R.drawable.game,R.drawable.sudaca,R.drawable.seer,"REPUBLICA SUDACA","Cra. 7 Nte. #7-34"));
         Adapter adapter = new Adapter(getContext(),mlist);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -50,19 +57,28 @@ public class Lista_Tienda extends Fragment {
         adapter.setMlistener(new Adapter.OnItemClickListener() {
             @Override
             public void itemClick(int position) {
-                a=position;
 
-                /*
+
+
+
+
                 Item item = mlist.get(position);
-                Intent intent = new Intent(getContext(), ScrollingActivity.class);
-                intent.putExtra(ScrollingActivity.EXTRA_PARAM_ID, item.getId());*/
+                mlist2.clear();
+                mlist2.add(item);
 
-                switch (position) {
+
+
+
+                Intent intent = new Intent(getContext(), ScrollingActivity.class);
+                intent.putExtra(ScrollingActivity.EXTRA_PARAM_ID, item.getId());
+                startActivity(intent);
+
+                /*switch (position) {
                     case 0:
                         Intent intent = new Intent(getContext(), ScrollingActivity.class);
                         startActivity(intent);
                         break;
-                }
+                }*/
             }
         });
 

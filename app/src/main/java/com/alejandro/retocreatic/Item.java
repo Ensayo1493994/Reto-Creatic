@@ -5,12 +5,13 @@ package com.alejandro.retocreatic;
  */
 
 public class Item {
-    int background,fototineda;
+    int background,fototineda,producto1;
     String nombre_tienda,direccion;
 
-    public Item(int background, int fototineda, String nombre_tienda, String direccion) {
+    public Item(int background, int fototineda, int producto1, String nombre_tienda, String direccion) {
         this.background = background;
         this.fototineda = fototineda;
+        this.producto1 = producto1;
         this.nombre_tienda = nombre_tienda;
         this.direccion = direccion;
     }
@@ -34,6 +35,14 @@ public class Item {
         this.fototineda = fototineda;
     }
 
+    public int getProducto1() {
+        return producto1;
+    }
+
+    public void setProducto1(int producto1) {
+        this.producto1 = producto1;
+    }
+
     public String getNombre_tienda() {
         return nombre_tienda;
     }
@@ -49,7 +58,16 @@ public class Item {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
     public int getId() {
         return nombre_tienda.hashCode();
+    }
+    public static Item getItem(int id){
+        for (Item item : Lista_Tienda.mlist){
+            if (item.getId() == id){
+                return item;
+            }
+        }
+        return null;
     }
 }

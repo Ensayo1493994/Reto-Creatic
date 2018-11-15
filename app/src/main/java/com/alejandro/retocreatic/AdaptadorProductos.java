@@ -10,29 +10,32 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
+
 /**
  * Created by lenovo on 3/09/2018.
  */
 
 public class AdaptadorProductos extends BaseAdapter {
     private Context context;
+    ArrayList<Item> list;
 
     //-----AQUI HAY QU ECAMBIAR "ITEMS" POR EL ARRAY QUE SE TRAE DESDE FIREBASE
 
-    public AdaptadorProductos(Context context  ) {
+
+    public AdaptadorProductos(Context context, ArrayList<Item> list) {
         this.context = context;
-
-
+        this.list = list;
     }
 
     @Override
     public int getCount() {
-        return Productos.ITEMS.length;
+        return list.size();
     }
 
     @Override
-    public Productos getItem(int position) {
-        return Productos.ITEMS[position];
+    public Item getItem(int position) {
+        return list.get(position);
     }
 
     @Override
@@ -51,11 +54,11 @@ public class AdaptadorProductos extends BaseAdapter {
         ImageView imagenComida = (ImageView) view.findViewById(R.id.imagen_comida);
         TextView nombreComida = (TextView) view.findViewById(R.id.nombre_comida);
 
-        final Productos item = getItem(position);
+        final Item item = getItem(position);
         //imagenComida.setImageResource(item.getIdDrawable());
 
-        Glide.with(imagenComida.getContext()).load(item.getIdDrawable()).into(imagenComida);
-        nombreComida.setText(item.getNombre());
+        Glide.with(imagenComida.getContext()).load(item.getProducto1()).into(imagenComida);
+        nombreComida.setText(item.getNombre_tienda());
 
         return view;
     }

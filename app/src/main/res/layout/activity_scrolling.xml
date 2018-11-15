@@ -43,5 +43,12 @@
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
         app:srcCompat="@android:drawable/ic_dialog_email" />
+    <GridView
+        android:id="@+id/lista_productos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+    </GridView>
 
 </android.support.design.widget.CoordinatorLayout>

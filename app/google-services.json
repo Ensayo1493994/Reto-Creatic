@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "211252513621",
+    "firebase_url": "https://reto-creatic.firebaseio.com",
+    "project_id": "reto-creatic",
+    "storage_bucket": "reto-creatic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:211252513621:android:045887d5915f3abe",
+        "android_client_info": {
+          "package_name": "com.alejandro.retocreatic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "211252513621-phovj473v36f7gvv9ausclhlufgqulhs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alejandro.retocreatic",
+            "certificate_hash": "461a2bd0fb21de800aa48e84de048e14aa5038b0"
+          }
+        },
+        {
+          "client_id": "211252513621-t75ktbvcn76vm6gro99j5d4akbo1p7vb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw0mK1nTalaMbsmEtmIruaTXvq5isdvdQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "211252513621-t75ktbvcn76vm6gro99j5d4akbo1p7vb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

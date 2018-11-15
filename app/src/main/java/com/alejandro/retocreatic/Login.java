@@ -5,6 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -41,11 +43,11 @@ public class Login extends AppCompatActivity  implements GoogleApiClient.OnConne
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         progressBar = findViewById(R.id.progresBar);
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         //animacion login
 
         smalltobig = AnimationUtils.loadAnimation(this,R.anim.smalltobig);
-        logocir = findViewById(R.id.logocir);
-        logocir.startAnimation(smalltobig);
 
         nothingtocome = AnimationUtils.loadAnimation(this,R.anim.nothingtocome);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)

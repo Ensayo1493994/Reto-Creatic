@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         firebaseAuth = FirebaseAuth.getInstance();
+        inicializarfirebase();
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
         nombreusuario=  user.getDisplayName();
@@ -64,9 +65,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         firebaseAuth = FirebaseAuth.getInstance();
 
         Usuario p = new Usuario();
-        p.setUid(UUID.randomUUID().toString());
+        p.setUuid(UUID.randomUUID().toString());
         p.setNombre(nombreusuario);
         p.setCorreo(user.getEmail());
+
+        databaseReference.child("Usuario").child(p.getUuid()).setValue(p);
 
 
 
@@ -112,6 +115,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .enableAutoManage(this,this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
                 .build();
+    }
+
+    private void inicializarfirebase() {
+        firebaseApp.initializeApp(this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        //firebaseDatabase.setPersistenceEnabled(true);
+        databaseReference = firebaseDatabase.getReference();
     }
 
     private void goLogin() {

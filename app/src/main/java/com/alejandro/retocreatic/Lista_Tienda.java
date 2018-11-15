@@ -44,12 +44,12 @@ public class Lista_Tienda extends Fragment {
         RecyclerView recyclerView = vista.findViewById(R.id.Lista_tienda);
 
         //mlist.add(new Item(R.drawable.game,R.drawable.clavero,"clavero","españa"));
-        mlist.add(new Item(R.drawable.game,R.drawable.byloko,R.drawable.dre,"BY LOCO","Centro Comercial Campanario Local 130"));
-        mlist.add(new Item(R.drawable.game,R.drawable.koaj,R.drawable.koajl,"KOAJ","Calle 6ta No 7-42"));
-        mlist.add(new Item(R.drawable.game,R.drawable.quests,R.drawable.camisa,"QUESTS","Cra 9 24a-21, Popayán"));
-        mlist.add(new Item(R.drawable.game,R.drawable.mattelsa,R.drawable.cran,"MATTELSA","Cra 7 # 3 – 22 C.C Plaza Colonial Local 101"));
-        mlist.add(new Item(R.drawable.game,R.drawable.ragged,R.drawable.pantalonmujer,"RAGGED","Cra 9 24 AN 21 - LOCAL 2-3"));
-        mlist.add(new Item(R.drawable.game,R.drawable.sudaca,R.drawable.seer,"REPUBLICA SUDACA","Cra. 7 Nte. #7-34"));
+        mlist.add(new Item(R.drawable.descuento1,R.drawable.byloko,R.drawable.dre,"BY LOCO","Centro Comercial Campanario Local 130"));
+        mlist.add(new Item(R.drawable.descuento4,R.drawable.koaj,R.drawable.koajl,"KOAJ","Calle 6ta No 7-42"));
+        mlist.add(new Item(R.drawable.descuento2,R.drawable.quests,R.drawable.camisa,"QUESTS","Cra 9 24a-21, Popayán"));
+        mlist.add(new Item(R.drawable.descuento3,R.drawable.mattelsa,R.drawable.cran,"MATTELSA","Cra 7 # 3 – 22 C.C Plaza Colonial Local 101"));
+        mlist.add(new Item(R.drawable.descuento2,R.drawable.ragged,R.drawable.pantalonmujer,"RAGGED","Cra 9 24 AN 21 - LOCAL 2-3"));
+        mlist.add(new Item(R.drawable.descuento1,R.drawable.sudaca,R.drawable.seer,"REPUBLICA SUDACA","Cra. 7 Nte. #7-34"));
         Adapter adapter = new Adapter(getContext(),mlist);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

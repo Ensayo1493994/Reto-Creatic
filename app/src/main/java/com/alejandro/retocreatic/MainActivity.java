@@ -26,8 +26,13 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, GoogleApiClient.OnConnectionFailedListener {
     private FirebaseUser firebaseUser;
@@ -36,10 +41,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private GoogleApiClient googleApiClient;
 
 
+    FirebaseDatabase firebaseDatabase;
+    FirebaseApp firebaseApp;
+    DatabaseReference databaseReference;
+    String nombreusuario;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        nombreusuario=  user.getDisplayName();
 
 
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -47,6 +62,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        Usuario p = new Usuario();
+        p.setUid(UUID.randomUUID().toString());
+        p.setNombre(nombreusuario);
+        p.setCorreo(user.getEmail());
 
 
 

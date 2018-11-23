@@ -6,17 +6,15 @@ package com.alejandro.retocreatic;
 
 public class Item {
     int background,fototineda,producto1;
-    String nombre_tienda,direccion;
+    String nombre_tienda,direccion,url;
 
-    public Item(int background, int fototineda, int producto1, String nombre_tienda, String direccion) {
+    public Item(int background, int fototineda, int producto1, String nombre_tienda, String direccion, String url) {
         this.background = background;
         this.fototineda = fototineda;
         this.producto1 = producto1;
         this.nombre_tienda = nombre_tienda;
         this.direccion = direccion;
-    }
-
-    public Item() {
+        this.url = url;
     }
 
     public int getBackground() {
@@ -57,6 +55,14 @@ public class Item {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public int getId() {

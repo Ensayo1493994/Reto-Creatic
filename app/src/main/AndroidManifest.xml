@@ -35,6 +35,8 @@
             </intent-filter>
 
         </activity>
+        <activity android:name=".PaginaB"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

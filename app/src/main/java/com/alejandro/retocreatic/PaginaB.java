@@ -8,6 +8,8 @@ public class PaginaB extends AppCompatActivity {
 
     WebView webView;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,6 +17,7 @@ public class PaginaB extends AppCompatActivity {
 
         webView=findViewById(R.id.web1);
 
-        webView.loadUrl("https://www.bylokony.com/");
+
+        webView.loadUrl(ScrollingActivity.url);
     }
 }

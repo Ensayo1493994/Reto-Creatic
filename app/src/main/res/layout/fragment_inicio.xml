@@ -2,9 +2,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.alejandro.retocreatic.Inicio">
+    tools:context="com.alejandro.retocreatic.Inicio"
+>
 
     <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/fotoperfil"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp"
+            android:src="@drawable/clavero" />
+
+        <TextView
+            android:id="@+id/nombre_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fotoperfil"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="22dp"
+            android:text="usuario"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nombre_user"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="36dp"
+            android:text="Puntucion por compras"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/spinner"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="32dp"
+            android:text="Tienda"
+            android:textSize="20dp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp">
+
+        </Spinner>
+
+        <TextView
+            android:id="@+id/puntos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/spinner"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="28dp"
+            android:text="0"
+            android:textSize="35dp" />
+
+
+    </RelativeLayout>
 
 
 </FrameLayout>

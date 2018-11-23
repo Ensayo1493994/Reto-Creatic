@@ -29,6 +29,13 @@
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
+            <ImageView
+                android:scaleType="centerInside"
+                android:id="@+id/imagen_extendida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:transitionName="@string/nombre_transicion_imagen"/>
+
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
